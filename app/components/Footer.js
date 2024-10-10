@@ -1,16 +1,11 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-} from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 import { Icons, Themes } from "../../assets/Themes";
 
 const Footer = () => {
   return (
     <View style={styles.navigationContainer}>
-      <Image source={Icons.discover.light} />
-      <Text>Discover</Text>
+      {/* <Image source={Icons.discover.light} />
+      <Text>Discover</Text> */}
     </View>
   );
 };

@@ -1,14 +1,8 @@
-import { 
-  StyleSheet, 
-  View, 
-  Text, 
-  Image, 
-  Dimensions
-} from "react-native";
+import { StyleSheet, View, Text, Image, Dimensions } from "react-native";
 
-/* Files called index.js are treated specially by Node.js. 
+/* Files called index.js are treated specially by Node.js.
  * You can import them by giving the name of the folder the index.js
- * is located in! */ 
+ * is located in! */
 import Icons from "../../assets/Icons";
 
 /* This handy trick grabs the width and height of the device's window,
@@ -20,12 +14,17 @@ const windowHeight = Dimensions.get("window").height;
 const Header = () => {
   return (
     <View style={styles.header}>
-      <Text style={styles.name}>{Profiles.landay.name}</Text>
-      <Text>{Profiles.landay.pronouns}</Text>
-      <Image 
-        source={Icons.sun /* For dark mode, use Icons.moon */} 
-        style={styles.headerIcon} 
-      />
+      <View style={styles.namePronouns}>
+        <Text style={styles.name}>{Profiles.landay.name}</Text>
+        <Text style={styles.pronouns}>{Profiles.landay.pronouns}</Text>
+      </View>
+      <View style={styles.space}></View>
+      <View>
+        <Image
+          source={Icons.sun /* For dark mode, use Icons.moon */}
+          style={styles.headerIcon}
+        />
+      </View>
     </View>
   );
 };
@@ -36,13 +35,27 @@ const styles = StyleSheet.create({
     width: windowWidth * 0.1,
   },
   header: {
-    // fill this in!
+    display: "flex",
+    flexWrap: "wrap",
+    marginTop: 30,
+    marginLeft: 8,
+    marginRight: 8,
+    flexDirection: "row",
+  },
+  namePronouns: {
+    display: "flex",
+    flexDirection: "column",
   },
   name: {
-    // We've loaded this font for you in App.js
-    fontFamily: 'Sydney-Bold', // 'Sydney' is the non-bold version
+    fontFamily: "Sydney-Bold",
+    fontSize: 30,
   },
-  // add more styles for other components!
+  pronouns: {
+    fontFamily: "Sydney",
+  },
+  space: {
+    flex: 1,
+  },
 });
 
 export default Header;
