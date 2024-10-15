@@ -48,10 +48,11 @@ const styles = StyleSheet.create({
   },
   name: {
     fontFamily: "Sydney-Bold",
-    fontSize: 30,
+    fontSize: 32,
   },
   pronouns: {
     fontFamily: "Sydney",
+    fontSize: 16,
   },
   space: {
     flex: 1,
